@@ -101,6 +101,20 @@ pip install -r requirements.txt
 make
 make run
 ```
+## Expected Output
+
+```
+    Size     Naive (s)   Blocked (s)    OpenMP (s)     Speedup
+--------------------------------------------------------------
+     128        0.0024        0.0011        0.0119        0.20x
+     256        0.0277        0.0113        0.0049        5.68x
+     384        0.0800        0.0402        0.0084        9.57x
+     512        0.1788        0.0933        0.0205        8.73x
+     640        0.3532        0.1798        0.0370        9.54x
+     768        0.6176        0.3122        0.0636        9.71x
+     896        1.2006        0.4959        0.1058       11.35x
+    1024        2.4929        0.7365        0.1672       14.91x
+```
 
 Looking into the benchmark data we can see that OpenMP shows poor speedup at small sizes (128) due to parallelization overhead, but achieves up to 14.91x speedup at larger matrices.
 
