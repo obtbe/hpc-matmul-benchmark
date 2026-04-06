@@ -51,7 +51,7 @@ Then I benchmarked them, plotted the results, and finally saw with my own eyes: 
 | 896 | 1.20062 | 0.49586 | 0.10578 | 2.42x | 11.35x |
 | 1024 | 2.49292 | 0.73647 | 0.16722 | 3.38x | 14.91x |
 
-### Key Findings
+### Findings
 
 1. **Blocked version** achieves 1.9-3.4x speedup over naive. The improvement comes from better cache locality – the i-k-j loop order keeps `A[i][k]` in register and accesses `B[k][j]` sequentially.
 
@@ -100,3 +100,13 @@ cd hpc-matmul-benchmark
 pip install -r requirements.txt
 make
 make run
+
+
+Looking into the benchmark data we can see that OpenMP shows poor speedup at small sizes (128) due to parallelization overhead, but achieves up to 14.91x speedup at larger matrices.
+
+## Next Steps
+
+- [ ] Add AVX intrinsics for vectorization
+- [ ] Implement CUDA version for GPU comparison
+- [ ] Compare with Intel MKL / cuBLAS
+- [ ] Add different data types (float, int, double)
