@@ -94,15 +94,16 @@ hpc-matmul-benchmark/
 ```
 ## How to Run
 
-```bash
+```
 git clone https://github.com/obtbe/hpc-matmul-benchmark
 cd hpc-matmul-benchmark
 pip install -r requirements.txt
 make
 make run
-
+```
 
 Looking into the benchmark data we can see that OpenMP shows poor speedup at small sizes (128) due to parallelization overhead, but achieves up to 14.91x speedup at larger matrices.
+
 
 ## Next Steps
 
