@@ -1,0 +1,9 @@
+# Virtual environment
+venv/
+__pycache__/
+*.pyc
+
+# Compiled binaries
+benchmark
+test_correctness
+*.o
