@@ -4,11 +4,17 @@
 
 ## Why This Project
 
-Matrix multiplication is a fundamental operation in scientific computing, machine learning, and graphics. Understanding how to optimize it reveals core principles of high-performance computing:
+After finishing my Operating Systems 2 course, where we covered parallel programming concepts, I wanted to see if I could actually apply them to something real. Not just theory – real code running on real hardware, with numbers I could measure.
 
-- Memory hierarchy and cache efficiency
-- Parallel programming
-- Benchmarking and performance analysis
+I chose matrix multiplication. Why? Because it's everywhere. Every ML model, every scientific simulation, every graphics engine uses it. And everyone knows the naive triple loop is slow. But I wanted to understand *why* it's slow and *how much* faster it could be if I did things right.
+
+So I built three versions:
+
+1. **Naive** – the straightforward triple loop. My baseline.
+2. **Blocked** – reorganizing the computation to fit in CPU cache.
+3. **OpenMP** – parallelizing across multiple cores.
+
+Then I benchmarked them, plotted the results, and finally saw with my own eyes: cache optimization gave 2-3x speedup. Parallelization gave up to 15x. The numbers don't lie.
 
 ## System Information
 
